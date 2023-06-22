@@ -1,9 +1,8 @@
-import type User from '@/types/User'
 import type UserService from './UserService'
 
 export default class UserServiceA implements UserService {
-  getAll(): User[] {
-    return [
+  getAll() {
+    return Promise.resolve([
       {
         firstName: 'Barbara',
         lastName: 'Babbage',
@@ -19,6 +18,6 @@ export default class UserServiceA implements UserService {
         lastName: 'Bennett',
         email: 'bbennett@example.com'
       }
-    ]
+    ])
   }
 }

@@ -6,8 +6,9 @@ import { inject, ref } from 'vue'
 export const useUserStore = defineStore('user', () => {
   const users = ref<User[]>()
   const userService = inject(UserServiceKey)
+
   async function loadUsers() {
-    users.value = userService?.getAll()
+    users.value = await userService?.getAll()
   }
   return {
     users,
